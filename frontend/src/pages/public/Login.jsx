@@ -19,7 +19,7 @@ const Login = () => {
     try {
       // CRITICAL: Use relative path so Vite Proxy works correctly
       const { data } = await axios.post(
-        "/api/auth/login", 
+        "https://carhub-269k.onrender.com/api/auth/login", 
         { email, password },
         { timeout: 5000 } // 5 second timeout to prevent infinite hanging
       );
