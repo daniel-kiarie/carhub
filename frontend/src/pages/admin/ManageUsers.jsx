@@ -9,7 +9,7 @@ const ManageUsers = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/admin/users", {
+      .get("https://carhub-269k.onrender.com/api/admin/users", {
         headers: { Authorization: `Bearer ${user?.token}` },
       })
       .then((r) => setUsers(r.data))
@@ -20,7 +20,7 @@ const ManageUsers = () => {
   const handleDelete = async (id, name) => {
     if (!window.confirm(`Are you sure you want to delete "${name}"?`)) return;
     try {
-      await axios.delete(`http://localhost:5000/api/admin/users/${id}`, {
+      await axios.delete(`https://carhub-269k.onrender.com/api/admin/users/${id}`, {
         headers: { Authorization: `Bearer ${user?.token}` },
       });
       setUsers((prev) => prev.filter((u) => u._id !== id));

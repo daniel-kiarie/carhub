@@ -13,7 +13,7 @@ const Home = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("http://localhost:5000/api/cars")
+      .get("https://carhub-269k.onrender.com/api/cars")
       .then((r) => {
         const cars = r.data;
         // Prioritize cars marked as featured, fallback to first 3 if none found

@@ -13,7 +13,7 @@ const Cars = () => {
   useEffect(() => {
     const fetchCars = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/cars");
+        const response = await axios.get("https://carhub-269k.onrender.com/api/cars");
         setCars(response.data);
       } catch (error) {
         console.error("Failed to fetch cars:", error);

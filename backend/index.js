@@ -38,3 +38,8 @@ mongoose
 mongoose.connection.on("disconnected", () => {
   console.warn("MongoDB disconnected");
 });
+
+
+app.get("/", (req, res) => {
+  res.send("Welcome to the Car Showcase API");
+})

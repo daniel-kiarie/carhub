@@ -24,7 +24,7 @@ const CarDetails = () => {
   useEffect(() => {
     const fetchCar = async () => {
       try {
-        const { data } = await axios.get(`http://localhost:5000/api/cars/${id}`);
+        const { data } = await axios.get(`https://carhub-269k.onrender.com/api/cars/${id}`);
         setCar(data);
         setEditData(data);
       } catch (error) {
@@ -39,7 +39,7 @@ const CarDetails = () => {
   const handleDelete = async () => {
     if (!window.confirm(`Are you sure you want to delete "${car.title}"?`)) return;
     try {
-      await axios.delete(`http://localhost:5000/api/cars/${id}`, {
+      await axios.delete(`https://carhub-269k.onrender.com/api/cars/${id}`, {
         headers: { Authorization: `Bearer ${user?.token}` },
       });
       navigate("/cars");
@@ -62,7 +62,7 @@ const CarDetails = () => {
     setEditMessage({ type: "", text: "" });
     try {
       const { data } = await axios.put(
-        `http://localhost:5000/api/cars/${id}`,
+        `https://carhub-269k.onrender.com/api/cars/${id}`,
         editData,
         { headers: { Authorization: `Bearer ${user?.token}` } }
       );
